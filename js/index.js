@@ -31,7 +31,7 @@ var app = {
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
+    // function, we must explicity call 'app.receivedEvent(...);  ok test'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
@@ -51,7 +51,7 @@ var app = {
         var pushNotification = window.plugins.pushNotification;
         console.log("PN " + pushNotification);
         if (device.platform == 'android' || device.platform == 'Android') {
-            pushNotification.register(successHandler, errorHandler,{"senderID":"824841663931","ecb":"onNotificationGCM"});
+            pushNotification.register(successHandler, errorHandler,{"senderID":"824841663931","ecb":"onNotificationGCM"}); 
         }
         else {
             pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
